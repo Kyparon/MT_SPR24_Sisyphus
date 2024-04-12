@@ -28,6 +28,7 @@ void setup() {
   // Set both servos to start at 0 degrees
   servo1.write(0);
   servo2.write(0);
+  delay(250);
 }
 
 void loop() {
@@ -38,16 +39,10 @@ void loop() {
     delay(15);            // Wait for servos to reach position
   }
   
-  // Stop further execution
-  while(true) {
-    servo1.write(0);
-    servo2.write(0);
-    rotate = (rotate + 5) % 360;
-    servo360.write(angle)
-    if(rotate != 0) {
-      delay(15);
-    } else {
-      delay(1000);
-    }
+  for (int rotate = 0; rotate <= 5; rotate += 1) {
+    //servo360.write(rotate);  
+    delay(55);            // Wait for servos to reach position
   }
+  // THY END IS NOW
+  while(true) { }
 }
