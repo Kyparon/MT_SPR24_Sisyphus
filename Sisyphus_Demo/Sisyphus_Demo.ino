@@ -44,6 +44,10 @@ void loop() {
     servo2.write(0);
     rotate = (rotate + 5) % 360;
     servo360.write(angle)
-    delay(15);
+    if(rotate != 0) {
+      delay(15);
+    } else {
+      delay(1000);
+    }
   }
 }
