@@ -1,10 +1,12 @@
 #include <Servo.h>
 
-Servo servo1;  // Create a servo object to control a servo
-Servo servo2;  // Create another servo object if needed
+Servo servo1;  
+Servo servo2;  
+Servo servo360; // 360 Servo
 
 int servo1Pin = 10;  // Pin connected to servo 1
 int servo2Pin = 11; // Pin connected to servo 2
+int servo360Pin = 9; // Pin connected to 360 servo
 
 int buttonPin = 2;  // Pin connected to the button
 
@@ -14,6 +16,7 @@ int led2Pin = 13;    // Pin connected to LED 2
 void setup() {
   servo1.attach(servo1Pin); // Attaches the servo on pin 9 to the servo object
   servo2.attach(servo2Pin); // Attaches the servo on pin 10 to the servo object
+  servo360.attach(servo360Pin);
   
   pinMode(led1Pin, OUTPUT); // Set LED pins as output
   pinMode(led2Pin, OUTPUT);
@@ -25,6 +28,7 @@ void setup() {
   // Set both servos to start at 0 degrees
   servo1.write(0);
   servo2.write(0);
+  delay(250);
 }
 
 void loop() {
@@ -35,6 +39,10 @@ void loop() {
     delay(15);            // Wait for servos to reach position
   }
   
-  // Stop further execution
-  while(true) {}
+  for (int rotate = 0; rotate <= 5; rotate += 1) {
+    //servo360.write(rotate);  
+    delay(55);            // Wait for servos to reach position
+  }
+  // THY END IS NOW
+  while(true) { }
 }
